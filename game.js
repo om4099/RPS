@@ -2,6 +2,7 @@ let icons = document.querySelectorAll('.icon');
 let resetButton = document.querySelector('.reset');
 let playerScore = document.querySelector('#playerScore');
 let computerScore = document.querySelector('#compScore');
+let drawScore = document.querySelector('#drawScore');
 let resultText = document.querySelector('.resultText');
 let playerChoice = '';
 let computerChoice = '';
@@ -39,6 +40,7 @@ for (let i = 0; i < icons.length; i++) {
             if (playerChoice === computerChoice) {
                 resultText.className = 'resultText';
                 resultText.innerText = "It's a draw!";
+                drawScore.innerText = parseInt(drawScore.innerText) + 1;
             } else if ( (playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'paper' && computerChoice === 'rock') || (playerChoice === 'scissors' && computerChoice === 'paper')) {
                 resultText.className = 'resultTextWin';
                 resultText.innerText = `You won! ${playerChoice} beats ${computerChoice}`;
